@@ -157,6 +157,6 @@ func criuOptions(context *cli.Context) *libcontainer.CriuOpts {
 		ShellJob:                context.Bool("shell-job"),
 		FileLocks:               context.Bool("file-locks"),
 		PreDump:                 context.Bool("pre-dump"),
-		PrevImagesDir:           context.Bool("prev-images-dir"),
+		PrevImagesDir:           context.String("prev-images-dir"),
 	}
 }
