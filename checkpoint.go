@@ -23,6 +23,8 @@ var checkpointCommand = cli.Command{
 		cli.BoolFlag{Name: "shell-job", Usage: "allow shell jobs"},
 		cli.StringFlag{Name: "page-server", Value: "", Usage: "ADDRESS:PORT of the page server"},
 		cli.BoolFlag{Name: "file-locks", Usage: "handle file locks, for safety"},
+		cli.BoolFlag{Name: "pre-dump", Usage: "Make pre dump"},
+		cli.StringFlag{Name: "prev-images-dir", Usage: "Previous img dir"},
 	},
 	Action: func(context *cli.Context) {
 		container, err := getContainer(context)

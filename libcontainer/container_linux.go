@@ -378,6 +378,7 @@ func (c *linuxContainer) Checkpoint(criuOpts *CriuOpts) error {
 		TcpEstablished: proto.Bool(criuOpts.TcpEstablished),
 		ExtUnixSk:      proto.Bool(criuOpts.ExternalUnixConnections),
 		FileLocks:      proto.Bool(criuOpts.FileLocks),
+		ParentImg:      proto.String(criuOpts.PrevImagesDir),
 	}
 
 	// append optional criu opts, e.g., page-server and port
@@ -388,7 +389,11 @@ func (c *linuxContainer) Checkpoint(criuOpts *CriuOpts) error {
 		}
 	}
 
-	t := criurpc.CriuReqType_DUMP
+	if criuOpts.PreDump {
+		t := criurpc.CriuReqType_PRE_DUMP
+	} else {
+		t := criurpc.CriuReqType_DUMP
+	}
 	req := &criurpc.CriuReq{
 		Type: &t,
 		Opts: &rpcOpts,

@@ -156,5 +156,7 @@ func criuOptions(context *cli.Context) *libcontainer.CriuOpts {
 		ExternalUnixConnections: context.Bool("ext-unix-sk"),
 		ShellJob:                context.Bool("shell-job"),
 		FileLocks:               context.Bool("file-locks"),
+		PreDump:                 context.Bool("pre-dump"),
+		PrevImagesDir:           context.Bool("prev-images-dir"),
 	}
 }
