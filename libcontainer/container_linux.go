@@ -711,6 +711,7 @@ func (c *linuxContainer) criuSwrk(process *Process, req *criurpc.CriuReq, opts *
 			continue
 		case t == criurpc.CriuReqType_RESTORE:
 		case t == criurpc.CriuReqType_DUMP:
+		case t == criurpc.CriuReqType_PRE_DUMP:
 			break
 		default:
 			return fmt.Errorf("unable to parse the response %s", resp.String())
