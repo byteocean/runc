@@ -25,6 +25,7 @@ var checkpointCommand = cli.Command{
 		cli.BoolFlag{Name: "file-locks", Usage: "handle file locks, for safety"},
 		cli.BoolFlag{Name: "pre-dump", Usage: "Make pre dump"},
 		cli.StringFlag{Name: "prev-images-dir", Usage: "Previous img dir"},
+		cli.BoolFlag{Name: "track-mem", Usage: "Turn on memory changes tracker in kernel"},
 	},
 	Action: func(context *cli.Context) {
 		container, err := getContainer(context)

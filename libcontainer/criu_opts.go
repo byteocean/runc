@@ -19,6 +19,7 @@ type CriuOpts struct {
 	ShellJob                bool               // allow to dump and restore shell jobs
 	PreDump                 bool               // allow to do pre dump
 	PrevImagesDir           string             // prev images dir when pre dumping
+	TrackMem                bool               // enable memory tracking in kernel
 	FileLocks               bool               // handle file locks, for safety
 	PageServer              CriuPageServerInfo // allow to dump to criu page server
 	VethPairs               []VethPairName     // pass the veth to criu when restore

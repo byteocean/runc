@@ -378,6 +378,7 @@ func (c *linuxContainer) Checkpoint(criuOpts *CriuOpts) error {
 		TcpEstablished: proto.Bool(criuOpts.TcpEstablished),
 		ExtUnixSk:      proto.Bool(criuOpts.ExternalUnixConnections),
 		FileLocks:      proto.Bool(criuOpts.FileLocks),
+		TrackMem:       proto.Bool(criuOpts.TrackMem),
 	}
 
 	// append optional criu opts, e.g., page-server and port

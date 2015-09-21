@@ -158,5 +158,6 @@ func criuOptions(context *cli.Context) *libcontainer.CriuOpts {
 		FileLocks:               context.Bool("file-locks"),
 		PreDump:                 context.Bool("pre-dump"),
 		PrevImagesDir:           context.String("prev-images-dir"),
+		TrackMem:                context.Bool("track-mem"),
 	}
 }
